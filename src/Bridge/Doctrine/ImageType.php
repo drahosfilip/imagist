@@ -69,7 +69,7 @@ class ImageType extends StringType
 	/**
 	 * @inheritDoc
 	 */
-	public function convertToDatabaseValue($value, AbstractPlatform $platform)
+	public function convertToDatabaseValue(mixed $value, AbstractPlatform $platform): mixed
 	{
 		if (!$value instanceof ImageInterface && $value !== null) {
 			throw ConversionException::conversionFailedInvalidType(
@@ -85,7 +85,7 @@ class ImageType extends StringType
 	/**
 	 * @inheritDoc
 	 */
-	public function convertToPHPValue($value, AbstractPlatform $platform) // phpcs:ignore Generic.NamingConventions.CamelCapsFunctionName.ScopeNotCamelCaps
+	public function convertToPHPValue(mixed $value, AbstractPlatform $platform): mixed // phpcs:ignore Generic.NamingConventions.CamelCapsFunctionName.ScopeNotCamelCaps
 	{
 		if (!is_string($value) && $value !== null) {
 			throw ConversionException::conversionFailedInvalidType(
